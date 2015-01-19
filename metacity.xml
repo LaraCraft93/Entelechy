@@ -54,9 +54,9 @@
     <button function="maximize" state="normal"><draw_ops><image filename="maximize.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
     <button function="maximize" state="pressed"><draw_ops><image filename="maximize-pressed.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
     <button function="maximize" state="prelight"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
-    <button function="menu" state="normal"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
-    <button function="menu" state="pressed"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
-    <button function="menu" state="prelight"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
+    <button function="menu" state="normal"><draw_ops><icon x="0" y="3" width="20" height="20" alpha="1.0"/> </draw_ops></button>
+    <button function="menu" state="pressed"><draw_ops><icon x="0" y="3" width="20" height="20" alpha="1.0"/> </draw_ops></button>
+    <button function="menu" state="prelight"><draw_ops><icon x="0" y="3" width="20" height="20" alpha="0.5"/> </draw_ops></button>
 </frame_style>
 
 <!-- WINDOW INACTIVE -->
@@ -91,9 +91,9 @@
     <button function="maximize" state="normal"><draw_ops><image filename="maximize.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
     <button function="maximize" state="pressed"><draw_ops><image filename="maximize-pressed.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
     <button function="maximize" state="prelight"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
-    <button function="menu" state="normal"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
-    <button function="menu" state="pressed"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
-    <button function="menu" state="prelight"><draw_ops><image filename="maximize-prelight.svg" x="0" y="3" width="object_width" height="object_height"/></draw_ops></button>
+    <button function="menu" state="normal"><draw_ops><icon x="0" y="3" width="20" height="20" alpha="1.0"/> </draw_ops></button>
+    <button function="menu" state="pressed"><draw_ops><icon x="0" y="3" width="20" height="20" alpha="1.0"/> </draw_ops></button>
+    <button function="menu" state="prelight"><draw_ops><icon x="0" y="3" width="20" height="20" alpha="0.5"/> </draw_ops></button>
 </frame_style>
 
 <frame_style_set name="normal">

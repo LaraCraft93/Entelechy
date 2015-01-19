@@ -41,36 +41,6 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3801"
-       id="linearGradient3812"
-       x1="0.011793494"
-       y1="20.015625"
-       x2="39.988209"
-       y2="20.015625"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-0.005045,1012.1252)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3801-8"
-       id="linearGradient3812-8"
-       x1="0.011793494"
-       y1="20.015625"
-       x2="39.988209"
-       y2="20.015625"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       id="linearGradient3801-8">
-      <stop
-         id="stop3818-3"
-         offset="0"
-         style="stop-color:#7f7f7f;stop-opacity:0.93333334;" />
-      <stop
-         style="stop-color:#717171;stop-opacity:0.60000002;"
-         offset="1"
-         id="stop3805-6" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3801"
        id="linearGradient3795"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(-0.005045,1012.1252)"
