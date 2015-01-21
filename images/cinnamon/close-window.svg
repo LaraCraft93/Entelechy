@@ -47,56 +47,6 @@
      inkscape:current-layer="g3808" />
   <defs
      id="defs171">
-    <filter
-       id="c"
-       height="1.4181"
-       width="1.4198"
-       color-interpolation-filters="sRGB"
-       y="-0.20904"
-       x="-0.20990001">
-      <feGaussianBlur
-         stdDeviation="1.3282637"
-         id="feGaussianBlur174" />
-    </filter>
-    <filter
-       id="b"
-       height="1.4261"
-       width="1.426"
-       color-interpolation-filters="sRGB"
-       y="-0.21306001"
-       x="-0.21298">
-      <feGaussianBlur
-         stdDeviation="0.71020915"
-         id="feGaussianBlur177" />
-    </filter>
-    <radialGradient
-       id="d"
-       gradientUnits="userSpaceOnUse"
-       cy="5.8190999"
-       cx="7.6582999"
-       gradientTransform="matrix(1.4402,0,0,1.4461,4.971,2.8359)"
-       r="8.6928997">
-      <stop
-         stop-color="#7b7b7b"
-         offset="0"
-         id="stop180"
-         style="stop-color:#be32ca;stop-opacity:0.74418604;" />
-      <stop
-         stop-color="#101010"
-         offset="1"
-         id="stop182"
-         style="stop-color:#934ae6;stop-opacity:0.81007755;" />
-    </radialGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#d"
-       id="linearGradient3769"
-       x1="3.6970382"
-       y1="14.476512"
-       x2="28.083426"
-       y2="14.476512"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0.06805207,0)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3771"
