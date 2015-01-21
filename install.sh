@@ -21,10 +21,15 @@ CursorTheme=default
 EOF
 }
 
-install -dm755 "$INSTALLPREFIX/$PROJECTNAME"/{cinnamon/,gtk-2.0/,gtk-3.0/,metacity-1/}/
+install -dm755 "$INSTALLPREFIX/$PROJECTNAME"/{conky,cinnamon/,gtk-2.0/,gtk-3.0/,metacity-1/}/
 install -Dm644 images/cinnamon/* "$INSTALLPREFIX/$PROJECTNAME/cinnamon/"
 install -Dm644 images/metacity/* "$INSTALLPREFIX/$PROJECTNAME/metacity-1/"
 install -Dm644 cinnamon.css "$INSTALLPREFIX/$PROJECTNAME/cinnamon/"
 install -Dm644 metacity.xml "$INSTALLPREFIX/$PROJECTNAME/metacity-1/metacity-theme-1.xml"
+install -Dm644 bargraph.lua "$INSTALLPREFIX/$PROJECTNAME/conky/"
+install -Dm644 conky.theme "$INSTALLPREFIX/$PROJECTNAME/conky/"
+
 create_desktop_entry "$INSTALLPREFIX/$PROJECTNAME/index.theme"
 
+sed -i "s|bargraph|$INSTALLPREFIX/$PROJECTNAME/conky/bargraph|" \
+       "$INSTALLPREFIX/$PROJECTNAME/conky/conky.theme"
