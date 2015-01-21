@@ -22,6 +22,7 @@ a CC-BY-NC-SA 4.0 International License.
 TODO:
 
 - ~~Cinnamon theme~~
+- ~~Metacity theme~~
 - ~~Conky theme~~
 - Gtk+2 theme
 - Gtk+3 theme
