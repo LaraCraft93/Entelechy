@@ -1,12 +1,13 @@
 CC = cc
 CFLAGS = -O3 -lcurl -pedantic-errors -Wall -std=c99
-OBJ = test_network.o
+OBJ = scripts/conky/test_network.o
+EXECUTABLE = scripts/conky/test_network
 
-test_network: $(OBJ)
+$(EXECUTABLE): $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	@rm $(OBJ) test_network
+	@rm $(OBJ) $(EXECUTABLE)
 
 # Always rebuild, for now
-.PHONY: clean test_network
+.PHONY: clean $(EXECUTABLE)

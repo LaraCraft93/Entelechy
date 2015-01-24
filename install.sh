@@ -28,11 +28,11 @@ make || exit 1
 install -dm755 "$INSTALLPREFIX/$PROJECTNAME"/{conky,cinnamon/,gtk-2.0/,gtk-3.0/,metacity-1/}/
 install -Dm644 images/cinnamon/* "$INSTALLPREFIX/$PROJECTNAME/cinnamon/"
 install -Dm644 images/metacity/* "$INSTALLPREFIX/$PROJECTNAME/metacity-1/"
-install -Dm644 cinnamon.css "$INSTALLPREFIX/$PROJECTNAME/cinnamon/"
-install -Dm644 metacity.xml "$INSTALLPREFIX/$PROJECTNAME/metacity-1/metacity-theme-1.xml"
-install -Dm644 bargraph.lua "$INSTALLPREFIX/$PROJECTNAME/conky/"
-install -Dm644 conky.theme "$INSTALLPREFIX/$PROJECTNAME/conky/"
-install -Dm755 test_network "$INSTALLPREFIX/$PROJECTNAME/conky/"
+install -Dm644 scripts/cinnamon/cinnamon.css "$INSTALLPREFIX/$PROJECTNAME/cinnamon/"
+install -Dm644 scripts/metacity/metacity.xml "$INSTALLPREFIX/$PROJECTNAME/metacity-1/metacity-theme-1.xml"
+install -Dm644 scripts/conky/bargraph.lua "$INSTALLPREFIX/$PROJECTNAME/conky/"
+install -Dm644 scripts/conky/conky.theme "$INSTALLPREFIX/$PROJECTNAME/conky/"
+install -Dm755 scripts/conky/test_network "$INSTALLPREFIX/$PROJECTNAME/conky/"
 
 create_desktop_entry "$INSTALLPREFIX/$PROJECTNAME/index.theme"
 
