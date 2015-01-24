@@ -86,9 +86,3 @@ ${voffset -13}${goto 1000}${color white}Entropy:${color DD99BB} $entropy_perc%
 # Network
 ${voffset -13}${goto 1100}${color white}Down:${color DD99BB} ${downspeed enp1s0} (Total: ${totaldown enp1s0})
 ${voffset -13}${goto 1315}${color white}Up:${color DD99BB} ${upspeed enp1s0} (Total ${totalup enp1s0})
-# Test Network
-${voffset -13}${goto 1510}${color white}Net:${color DD99BB} ${execi 5 /usr/bin/test_network net}
-${voffset -13}${goto 1610}${color white}Rede:${color DD99BB} ${execi 5 /usr/bin/test_network rede}
-${voffset -13}${goto 1715}${color white}Wifi:${color DD99BB} ${execi 5 /usr/bin/test_network wifi}
-${voffset -13}${goto 1820}${color white}DNS:${color DD99BB} ${texeci 5 /usr/bin/test_network dns}
-
