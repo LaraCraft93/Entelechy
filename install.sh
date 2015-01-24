@@ -21,6 +21,10 @@ CursorTheme=default
 EOF
 }
 
+echo "Installing..."
+
+make || exit 1
+
 install -dm755 "$INSTALLPREFIX/$PROJECTNAME"/{conky,cinnamon/,gtk-2.0/,gtk-3.0/,metacity-1/}/
 install -Dm644 images/cinnamon/* "$INSTALLPREFIX/$PROJECTNAME/cinnamon/"
 install -Dm644 images/metacity/* "$INSTALLPREFIX/$PROJECTNAME/metacity-1/"
@@ -37,3 +41,8 @@ sed -i "s|bargraph|$INSTALLPREFIX/$PROJECTNAME/conky/bargraph|" \
 
 sed -i "s|/usr/bin/|$INSTALLPREFIX/$PROJECTNAME/conky/|" \
        "$INSTALLPREFIX/$PROJECTNAME/conky/conky.theme"
+
+sed -i "s|test_network|$INSTALLPREFIX/$PROJECTNAME/conky/test_network|" \
+       "$INSTALLPREFIX/$PROJECTNAME/conky/bargraph.lua"
+
+echo "Instalation Completed!"

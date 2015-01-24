@@ -142,7 +142,7 @@ function conky_main_bars()
                         
             {
             name="execi",
-            arg="5 test_network downbar enp1s0 133000",
+            arg="5 test_network speed enp1s0 rx 1200000",
             max=100,
             alarm=50,
             bg_colour={0xFFFFFF,0.25},
@@ -161,7 +161,7 @@ function conky_main_bars()
 
             {
             name="execi",
-            arg="5 test_network upbar enp1s0 62000",
+            arg="5 test_network speed enp1s0 tx 130000",
             max=100,
             alarm=50,
             bg_colour={0xFFFFFF,0.25},

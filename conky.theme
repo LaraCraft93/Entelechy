@@ -2,6 +2,8 @@
 # Lara Maia <lara@craft.net.br> 2015
 #
 # WARNING: CONKY MUST BE COMPILED WITH LUA SUPPORT
+# Adjust test_network params in bargraph.lua
+# eg.: test_network speed <network> <rx or tx> <maximum bandwidth in bytes>
 
 #### --- Process options --- ###
 background false
