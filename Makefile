@@ -1,13 +1,14 @@
 # Lara Maia <lara@craft.net.br> 2015
 
 PROJECT = Entelechy
-DESTDIR = build/
-THEMEDIR = .themes/
-ICONDIR = .icon/
+DESTDIR = build
+THEMEDIR = .themes
+ICONDIR = .icon
 REALDESTDIR = $(realpath $(DESTDIR))
 TIMESTAMP = `date '+%Y%m%d'`
 
 CC = cc
+XCURSORGEN = /usr/bin/xcursorgen
 CFLAGS = -O3 -lcurl -pedantic-errors -Wall -std=c99
 OBJ = scripts/conky/test_network.o
 EXECUTABLE = scripts/conky/test_network
@@ -18,11 +19,19 @@ checkdest:
 $(EXECUTABLE): $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
-install: index-install metacity-install cinnamon-install conky-install
+install: index-install metacity-install cinnamon-install conky-install cursor-install
 
 index-install: checkdest
 	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/
 	install -Dm644 scripts/index.theme $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/index.theme
+
+cursor-index-install: checkdest icon-index-install
+	install -dm755 $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/
+	install -Dm644 scripts/cursor.theme $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursor.theme
+
+icon-index-install: checkdest
+	install -dm755 $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/
+	install -Dm644 scripts/icon.theme $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/index.theme
 
 metacity-install: checkdest index-install
 	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/metacity-1/
@@ -43,9 +52,23 @@ conky-install: checkdest $(EXECUTABLE)
 	sed -i "s|/usr/bin/|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/conky.theme
 	sed -i "s|test_network|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/test_network|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/bargraph.lua
 
+cursor-install: checkdest cursor-index-install icon-index-install
+	install -dm755 $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors
+	$(XCURSORGEN) -p images/cursor/normal_select scripts/cursor/normal_select.cursor $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/left_ptr
+	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/right_ptr
+	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/arrow
+	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/top_left_arrow
+	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/context-menu
+	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/copy
+	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/default
+	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/dotbox
+
 clean:
-	@rm -f $(OBJ) $(EXECUTABLE)
-	@rm -f *.zip
+	rm -f $(OBJ) $(EXECUTABLE)
+	rm -f *.zip
+
+distclean:
+	rm -rf build/
 
 zip: install
 	7z a Entelechy-\(Conky\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
