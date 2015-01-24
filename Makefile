@@ -3,6 +3,7 @@
 PROJECT = Entelechy
 DESTDIR = build/
 REALDESTDIR = $(realpath $(DESTDIR))
+TIMESTAMP = `date '+%Y%m%d'`
 
 CC = cc
 CFLAGS = -O3 -lcurl -pedantic-errors -Wall -std=c99
@@ -41,7 +42,15 @@ conky-install: checkdest $(EXECUTABLE)
 	sed -i "s|test_network|$(REALDESTDIR)/$(PROJECT)/conky/test_network|" $(REALDESTDIR)/$(PROJECT)/conky/bargraph.lua
 
 clean:
-	@rm $(OBJ) $(EXECUTABLE)
+	@rm -f $(OBJ) $(EXECUTABLE)
+	@rm -f *.zip
+
+zip: install
+	7z a Entelechy-\(Conky\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/conky/
+	7z a Entelechy-\(Metacity\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/{metacity-1/,index.theme}
+	7z a Entelechy-\(Cinnamon\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/{cinnamon/,index.theme}
+	7z a Entelechy-\(ALL\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/{cinnamon,metacity-1,conky,index.theme}
+
 
 # Always rebuild, for now
 .PHONY: clean install $(EXECUTABLE)
