@@ -1,9 +1,4 @@
-/cinnamon/
-/gtk-2.0/
-/gtk-3.0/
-/metacity-1/
-/index.theme
-/conky/
+/scripts/conky/test_network
 *.xcf
-/test_network
 *.zip
+*.o
