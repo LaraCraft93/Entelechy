@@ -2,6 +2,8 @@
 
 PROJECT = Entelechy
 DESTDIR = build/
+THEMEDIR = .themes/
+ICONDIR = .icon/
 REALDESTDIR = $(realpath $(DESTDIR))
 TIMESTAMP = `date '+%Y%m%d'`
 
@@ -19,37 +21,37 @@ $(EXECUTABLE): $(OBJ)
 install: index-install metacity-install cinnamon-install conky-install
 
 index-install: checkdest
-	install -dm755 $(REALDESTDIR)/$(PROJECT)/
-	install -Dm644 scripts/index.theme $(REALDESTDIR)/$(PROJECT)/index.theme
+	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/
+	install -Dm644 scripts/index.theme $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/index.theme
 
 metacity-install: checkdest index-install
-	install -dm755 $(REALDESTDIR)/$(PROJECT)/metacity-1/
-	install -Dm644 images/metacity/* $(REALDESTDIR)/$(PROJECT)/metacity-1/
-	install -Dm644 scripts/metacity/metacity.xml $(REALDESTDIR)/$(PROJECT)/metacity-1/metacity-theme-1.xml
+	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/metacity-1/
+	install -Dm644 images/metacity/* $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/metacity-1/
+	install -Dm644 scripts/metacity/metacity.xml $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/metacity-1/metacity-theme-1.xml
 
 cinnamon-install: checkdest index-install
-	install -dm755 $(REALDESTDIR)/$(PROJECT)/cinnamon/
-	install -Dm644 images/cinnamon/* $(REALDESTDIR)/$(PROJECT)/cinnamon/
-	install -Dm644 scripts/cinnamon/cinnamon.css $(REALDESTDIR)/$(PROJECT)/cinnamon/
+	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
+	install -Dm644 images/cinnamon/* $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
+	install -Dm644 scripts/cinnamon/cinnamon.css $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
 
 conky-install: checkdest $(EXECUTABLE)
-	install -dm755 $(REALDESTDIR)/$(PROJECT)/conky/
-	install -Dm644 scripts/conky/bargraph.lua $(REALDESTDIR)/$(PROJECT)/conky/
-	install -Dm644 scripts/conky/conky.theme $(REALDESTDIR)/$(PROJECT)/conky/
-	install -Dm755 scripts/conky/test_network $(REALDESTDIR)/$(PROJECT)/conky/
-	sed -i "s|bargraph|$(REALDESTDIR)/$(PROJECT)/conky/bargraph|" $(REALDESTDIR)/$(PROJECT)/conky/conky.theme
-	sed -i "s|/usr/bin/|$(REALDESTDIR)/$(PROJECT)/conky/|" $(REALDESTDIR)/$(PROJECT)/conky/conky.theme
-	sed -i "s|test_network|$(REALDESTDIR)/$(PROJECT)/conky/test_network|" $(REALDESTDIR)/$(PROJECT)/conky/bargraph.lua
+	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
+	install -Dm644 scripts/conky/bargraph.lua $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
+	install -Dm644 scripts/conky/conky.theme $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
+	install -Dm755 scripts/conky/test_network $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
+	sed -i "s|bargraph|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/bargraph|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/conky.theme
+	sed -i "s|/usr/bin/|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/conky.theme
+	sed -i "s|test_network|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/test_network|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/bargraph.lua
 
 clean:
 	@rm -f $(OBJ) $(EXECUTABLE)
 	@rm -f *.zip
 
 zip: install
-	7z a Entelechy-\(Conky\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/conky/
-	7z a Entelechy-\(Metacity\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/{metacity-1/,index.theme}
-	7z a Entelechy-\(Cinnamon\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/{cinnamon/,index.theme}
-	7z a Entelechy-\(ALL\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(PROJECT)/{cinnamon,metacity-1,conky,index.theme}
+	7z a Entelechy-\(Conky\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
+	7z a Entelechy-\(Metacity\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/{metacity-1/,index.theme}
+	7z a Entelechy-\(Cinnamon\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/{cinnamon/,index.theme}
+	7z a Entelechy-\(ALL\)-$(TIMESTAMP).zip $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/{cinnamon,metacity-1,conky,index.theme}
 
 
 # Always rebuild, for now
