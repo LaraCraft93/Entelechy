@@ -19,6 +19,21 @@ a CC-BY-NC-SA 4.0 International License.
 
 ![Thumbnail](http://lara.craft.net.br/tmp/cinnamon-thumb.png "Cinnamon Thumbnail")
 
+How to make and install
+=======================
+
+To make, run make (doh!)
+
+$ make
+
+To system-wide install, run make install
+
+$ make install
+
+To install in $HOME directory, run:
+
+$ make DESTDIR="$HOME" THEMEDIR='.themes' ICONDIR='.icons'
+
 TODO:
 
 - ~~Cinnamon theme~~
