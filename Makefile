@@ -13,6 +13,8 @@ CFLAGS = -O3 -lcurl -pedantic-errors -Wall -std=c99
 OBJ = scripts/conky/test_network.o
 EXECUTABLE = scripts/conky/test_network
 
+all: $(EXECUTABLE)
+
 checkdest:
 	mkdir -p $(DESTDIR)
 
