@@ -3,7 +3,7 @@
 PROJECT = Entelechy
 DESTDIR = build
 THEMEDIR = .themes
-ICONDIR = .icon
+ICONDIR = .icons
 REALDESTDIR = $(realpath $(DESTDIR))
 TIMESTAMP = `date '+%Y%m%d'`
 
@@ -62,6 +62,25 @@ cursor-install: checkdest cursor-index-install icon-index-install
 	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/copy
 	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/default
 	ln -sf left_ptr $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/dotbox
+	$(XCURSORGEN) -p images/cursor/normal_select scripts/cursor/link_select.cursor $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/link
+	ln -sf link $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/hand
+	ln -sf link $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/hand1
+	ln -sf link $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/hand2
+	ln -sf link $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/alias
+	ln -sf link $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/dnd-link
+	$(XCURSORGEN) -p images/cursor/text_select scripts/cursor/text_select.cursor $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/xterm
+	ln -sf xterm $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/ibeam
+	ln -sf xterm $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/text
+	ln -sf xterm $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/vertical-text
+	$(XCURSORGEN) -p images/cursor/help_select scripts/cursor/help_select.cursor $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/question_arrow
+	ln -sf question_arrow $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/help
+	ln -sf question_arrow $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/left_ptr_help
+	ln -sf question_arrow $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/whats_this
+	$(XCURSORGEN) -p images/cursor/busy scripts/cursor/busy.cursor $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/watch
+	ln -sf watch $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/left_ptr_watch
+	ln -sf watch $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/progress
+	ln -sf watch $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/wait
+	ln -sf watch $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/half-busy
 
 clean:
 	rm -f $(OBJ) $(EXECUTABLE)
