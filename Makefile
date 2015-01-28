@@ -1,9 +1,9 @@
 # Lara Maia <lara@craft.net.br> 2015
 
 PROJECT = Entelechy
-DESTDIR = build
-THEMEDIR = .themes
-ICONDIR = .icons
+DESTDIR = /usr/share
+THEMEDIR = themes
+ICONDIR = icons
 REALDESTDIR = $(realpath $(DESTDIR))
 TIMESTAMP = `date '+%Y%m%d'`
 
