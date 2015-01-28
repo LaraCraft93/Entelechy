@@ -19,12 +19,8 @@ a CC-BY-NC-SA 4.0 International License.
 
 ![Thumbnail](http://lara.craft.net.br/tmp/cinnamon-thumb.png "Cinnamon Thumbnail")
 
-How to make and install
+How to install
 =======================
-
-To make, run make (doh!)
-
-$ make
 
 To system-wide install, run make install
 

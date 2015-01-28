@@ -141,9 +141,9 @@ function conky_main_bars()
             },
                         
             {
-            name="execi",
-            arg="5 test_network speed enp1s0 rx 1200000",
-            max=100,
+            name="downspeedf",
+            arg="enp1s0", -- put here you network
+            max=1250, -- put here you download speed in KB/s
             alarm=50,
             bg_colour={0xFFFFFF,0.25},
             fg_colour={0x553096,1},
@@ -160,9 +160,9 @@ function conky_main_bars()
             },
 
             {
-            name="execi",
-            arg="5 test_network speed enp1s0 tx 130000",
-            max=100,
+            name="upspeedf",
+            arg="enp1s0", -- put here you network
+            max=136, -- put here you upload speed in KB/s
             alarm=50,
             bg_colour={0xFFFFFF,0.25},
             fg_colour={0x553096,1},

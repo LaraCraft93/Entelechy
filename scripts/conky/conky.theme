@@ -2,8 +2,7 @@
 # Lara Maia <lara@craft.net.br> 2015
 #
 # WARNING: CONKY MUST BE COMPILED WITH LUA SUPPORT
-# Adjust test_network params in bargraph.lua
-# eg.: test_network speed <network> <rx or tx> <maximum bandwidth in bytes>
+# Adjust your network params in bargraph.lua
 
 #### --- Process options --- ###
 background false
@@ -23,7 +22,7 @@ own_window_transparent no
 
 own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
 
-update_interval 2
+update_interval 1
 
 
 ### --- Alignment, sizes, fonts, colors --- ###

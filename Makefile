@@ -6,20 +6,10 @@ THEMEDIR = themes
 ICONDIR = icons
 REALDESTDIR = $(realpath $(DESTDIR))
 TIMESTAMP = `date '+%Y%m%d'`
-
-CC = cc
 XCURSORGEN = /usr/bin/xcursorgen
-CFLAGS = -O3 -lcurl -pedantic-errors -Wall -std=c99
-OBJ = scripts/conky/test_network.o
-EXECUTABLE = scripts/conky/test_network
-
-all: $(EXECUTABLE)
 
 checkdest:
 	mkdir -p $(DESTDIR)
-
-$(EXECUTABLE): $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS)
 
 install: index-install metacity-install cinnamon-install conky-install cursor-install
 
@@ -45,14 +35,11 @@ cinnamon-install: checkdest index-install
 	install -Dm644 images/cinnamon/* $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
 	install -Dm644 scripts/cinnamon/cinnamon.css $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
 
-conky-install: checkdest $(EXECUTABLE)
+conky-install: checkdest
 	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
 	install -Dm644 scripts/conky/bargraph.lua $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
 	install -Dm644 scripts/conky/conky.theme $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
-	install -Dm755 scripts/conky/test_network $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
-	sed -i "s|bargraph|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/bargraph|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/conky.theme
-	sed -i "s|/usr/bin/|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/conky.theme
-	sed -i "s|test_network|$(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/test_network|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/bargraph.lua
+	sed -i "s|load bargraph|load $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/bargraph|" $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/conky.theme
 
 cursor-install: checkdest cursor-index-install icon-index-install
 	install -dm755 $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors
@@ -85,7 +72,6 @@ cursor-install: checkdest cursor-index-install icon-index-install
 	ln -sf watch $(REALDESTDIR)/$(ICONDIR)/$(PROJECT)/cursors/half-busy
 
 clean:
-	rm -f $(OBJ) $(EXECUTABLE)
 	rm -f *.zip
 
 distclean:
