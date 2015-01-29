@@ -6,9 +6,7 @@ It's a vital force that directs an human to singularity.
 This is not an attempt, is an achievement.
 
 The idea of Entelechy was inspired by themes such as Divergence IV and Zorin OS 8,
-but with a proposal somewhat... different. We don't have help from compiz, since
-the current implementation of gnome has practically everything incompatible, then
-our right arm is window managers such as metacity and derivatives.
+but with a proposal somewhat... different. No more, try it.
 
 This work and all files in this repository is licensed under
 a CC-BY-NC-SA 4.0 International License.
