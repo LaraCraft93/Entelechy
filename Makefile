@@ -38,6 +38,8 @@ cinnamon-install: checkdest index-install
 	if [ "$(INVERT)" == "True" ]; then \
 		sed -i 's/menu-box.svg\") 24 15 2 37;/menu-box-inverted.svg\") 24 15;\n    padding-top: 23px;/g' $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/cinnamon.css; \
 		sed -i 's/right-background.svg/right-background-inverted.svg/g' $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/cinnamon.css; \
+		rm -f $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/thumbnail.png; \
+		mv $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/thumbnail-inverted.png $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/thumbnail.png; \
 	fi
 
 conky-install: checkdest
