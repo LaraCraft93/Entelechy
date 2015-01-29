@@ -84,8 +84,6 @@ StScrollBar StButton#vhandle:hover {
  * PopupMenu (popupMenu.js) 
  * ===================================================================*/
 .popup-menu-boxpointer {
-    /* border-image: url("menu-box-inverted.svg") 24 15;
-    padding-top: 30px; */
     border-image: url("menu-box.svg") 24 15 2 37;
     padding-bottom: 20px;
 }
@@ -128,11 +126,6 @@ StScrollBar StButton#vhandle:hover {
  */
 .popup-menu-content {
     padding: 1em 0em;
-    background-gradient-start: rgba(125,92,129,0.8);
-    background-gradient-end: transparent;
-    /* background-gradient-start: transparent;
-    background-gradient-end: rgba(125,92,129,0.8); */
-    background-gradient-direction: vertical;
 }
 .popup-menu-item {
     padding: .4em 1.75em;
@@ -219,7 +212,6 @@ StScrollBar StButton#vhandle:hover {
     border-right: 5px;
     spacing: 4px;
     border-image: url("right-background.svg") 28 1 1 1;
-    /* border-image: url("right-background-inverted.svg") 28 1 1 1; */
 }
 #panelCenter {
     spacing: 4px;

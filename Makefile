@@ -7,6 +7,7 @@ ICONDIR = icons
 REALDESTDIR = $(realpath $(DESTDIR))
 TIMESTAMP = `date '+%Y%m%d'`
 XCURSORGEN = /usr/bin/xcursorgen
+INVERT = False
 
 checkdest:
 	mkdir -p $(DESTDIR)
@@ -34,6 +35,10 @@ cinnamon-install: checkdest index-install
 	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
 	install -Dm644 images/cinnamon/* $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
 	install -Dm644 scripts/cinnamon/cinnamon.css $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/
+	if [ "$(INVERT)" == "True" ]; then \
+		sed -i 's/menu-box.svg\") 24 15 2 37;/menu-box-inverted.svg\") 24 15;\n    padding-top: 23px;/g' $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/cinnamon.css; \
+		sed -i 's/right-background.svg/right-background-inverted.svg/g' $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/cinnamon/cinnamon.css; \
+	fi
 
 conky-install: checkdest
 	install -dm755 $(REALDESTDIR)/$(THEMEDIR)/$(PROJECT)/conky/
