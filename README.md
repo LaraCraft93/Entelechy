@@ -30,6 +30,8 @@ To install in $HOME directory, run:
 
 $ make DESTDIR="$HOME" THEMEDIR='.themes' ICONDIR='.icons'
 
+(You can install a inverted theme with INVERT=True)
+
 TODO:
 
 - ~~Cinnamon theme~~
