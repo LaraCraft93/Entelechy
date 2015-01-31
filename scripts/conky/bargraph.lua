@@ -49,7 +49,7 @@ function conky_main_bars()
             
             {
             name="hwmon",
-            arg="0 temp 3",
+            arg="1 temp 1",
             max=100,
             alarm=50,
             bg_colour={0xFFFFFF,0.25},
@@ -68,7 +68,7 @@ function conky_main_bars()
             
             {
             name="hwmon",
-            arg="1 temp 1",
+            arg="0 temp 3",
             max=100,
             alarm=50,
             bg_colour={0xFFFFFF,0.25},
